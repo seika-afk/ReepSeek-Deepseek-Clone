@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Sidebar from "@/components/sidebar";
 import PromptBox from "@/components/Promptbox";
-import Message from "@/components/Message"; // ✅ Import Message
+import Message from "@/components/Message"; 
 
 export default function MyComponent() {
   const [expand, setExpand] = useState(false);
