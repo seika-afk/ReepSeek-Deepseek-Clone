@@ -2,6 +2,7 @@ import connectDB from "@/lib/db";
 import User from "@/models/User";   
 import {Webhook} from "svix";
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
 
 
 export async function POST(req){
