@@ -1,7 +1,7 @@
+import connectDB from "@/lib/db";   
+import User from "@/models/User";   
 import {Webhook} from "svix";
-import connectDB from "@/models/User";
-import User from "@/models/User";
-import { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 
 export async function POST(req){
@@ -40,7 +40,7 @@ switch (type){
 		await User.findByIdAndUpdate(data.id,userData)
 		break;
 	case 'user.deleted':
-		await User.findByIdAndUpdate(data.id)
+		await User.findByIdAndDelete(data.id)
 		break;
 	default:
 		break;
@@ -48,6 +48,6 @@ switch (type){
 
 }
 
-return NextRequest.json({message:"Event Recieved"});
+return NextResponse.json({message:"Event Recieved"});
 
 }
